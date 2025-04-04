@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website using flex and grid</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Flexbox Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         header {
             border-bottom: 1px solid #ccc;
-            padding: 20px;
-            text-align: center;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .title {
@@ -24,9 +26,45 @@
             margin: 0;
         }
 
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
         main {
+            display: flex;
+            flex-direction: column;
             padding: 20px;
+        }
+
+        .content {
             line-height: 1.6;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            main {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            .content {
+                flex: 3;
+            }
+
+            .sidebar {
+                flex: 1;
+                background-color: #f4f4f4;
+                padding: 10px;
+                border-left: 1px solid #ccc;
+            }
         }
     </style>
 </head>
@@ -34,6 +72,7 @@
     <header>
         <h1 class="title">DRAMA</h1>
     </header>
+
     <main>
         <p>Rethinking addiction requires a fundamental shift in how society perceives it and addresses its challenges. Historically, addiction has often been seen through a lens of moral failure or weakness, which has stigmatized individuals and hindered efforts to provide effective support. However, advancements in science have revealed that addiction is not merely a behavioral choice but a complex medical condition influenced by genetic, neurological, and environmental factors. This understanding forms the basis for adopting evidence-backed approaches to treatment and policy-making, fostering a more compassionate and effective framework for addressing addiction.</p>
 
@@ -41,9 +80,10 @@
 
         <p>At the policy level, restructuring regulations to reflect science-based insights is essential. Policies must prioritize prevention, harm reduction, and recovery-oriented approaches. Efforts should focus on educating communities to reduce the demand for substances, enforcing laws to limit supply, and offering accessible treatment and support services. By fostering collaboration across sectors—ranging from healthcare to law enforcement—these strategies can be effectively implemented. Additionally, the development and refinement of comprehensive frameworks, such as those outlined in national substance abuse policies, provide guidelines for early intervention, treatment center operations, and long-term recovery support.</p>
 
-        <p>Evidence-backed data plays a pivotal role in shaping these policies. Research into substance use patterns, treatment efficacy, and the social determinants of addiction offers critical insights that inform targeted interventions. For instance, understanding the socio-economic factors that contribute to addiction can help policymakers allocate resources where they are needed most, ensuring that vulnerable populations receive adequate support.</p>p>
+        <p>Evidence-backed data plays a pivotal role in shaping these policies. Research into substance use patterns, treatment efficacy, and the social determinants of addiction offers critical insights that inform targeted interventions. For instance, understanding the socio-economic factors that contribute to addiction can help policymakers allocate resources where they are needed most, ensuring that vulnerable populations receive adequate support.</p>
 
         <p>By embracing science-backed perspectives and integrating them into both treatment practices and regulatory frameworks, society can take meaningful steps toward reshaping how addiction is perceived and addressed. This paradigm shift not only alleviates the stigma surrounding addiction but also paves the way for more effective, humane solutions that promote recovery and resilience, ultimately strengthening individuals and communities alike.</p>
     </main>
 </body>
 </html>
+
